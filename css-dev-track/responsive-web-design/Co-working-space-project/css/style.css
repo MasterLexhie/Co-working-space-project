@@ -110,7 +110,7 @@ nav > div {
 
 @media screen and (min-width: 960px) {
   .nav-logo {
-    justify-content: space-between;
+    /* justify-content: space-between; */
     transition: all 0.3s ease-in;
   }
 
@@ -160,10 +160,6 @@ header > div {
 .header-image img {
   object-fit: cover;
   height: 100%;
-}
-
-.header-content {
-  /* padding: 3rem 6rem; */
 }
 
 .header-content-text {
