@@ -38,6 +38,18 @@ img {
   margin: 0 auto;
 }
 
+.btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.96rem;
+  border-radius: 7px;
+  background: #904cd5;
+  cursor: pointer;
+}
+
 /* NAVIGATION */
 nav {
   box-shadow: 0px 4px 4px 0px #dedcdc;
@@ -106,6 +118,30 @@ nav > div {
 .burger:hover::after {
   width: 100%;
   transition: width 0.4s ease-in;
+}
+
+.show {
+  position: absolute;
+  z-index: 10;
+  background: #000000d6;
+  top: 82px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.show ul {
+  display: block;
+  padding: 1rem 1rem;
+  min-height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.show ul li {
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid;
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 960px) {
@@ -222,17 +258,6 @@ header > div {
 }
 .checkbox input {
   margin-right: 0.4rem;
-}
-
-.btn {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 0.96rem;
-  border-radius: 7px;
-  background: #904cd5;
 }
 
 @media screen and (min-width: 1024px) {
