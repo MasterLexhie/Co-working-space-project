@@ -12,14 +12,12 @@ const showMobileMenu = () => {
   });
 };
 
-// burger.addEventListener("click", showMobileMenu);
-
 const toggleBtnColor = () => {
   const btn = document.querySelectorAll(".staff-btn");
 
   btn.forEach(x => {
     x.addEventListener("click", function(y) {
-      let element = y.originalTarget;
+      let element = y.target;
       element.classList.toggle("colored-bg");
     });
   });
