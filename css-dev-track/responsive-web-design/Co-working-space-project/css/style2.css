@@ -19,10 +19,13 @@
 .building > h3 {
   font-size: 2rem;
   padding-bottom: 0.7rem;
+  font-weight: 600;
 }
 
 .building > p {
   font-size: 0.9rem;
+  color: #ababab;
+  line-height: 1.7;
 }
 
 .building-cards {
@@ -40,25 +43,34 @@
   padding-bottom: 1rem;
 }
 
+.building-card .flex p {
+  color: #ababab;
+}
+
 .building-card h4 {
   padding-bottom: 1rem;
+  font-weight: 600;
+  color: #ababab;
 }
 
 .building-card span {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
+  display: flex;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
   margin-right: 0.6rem;
   background: #4732b4;
   border-radius: 50%;
 }
 
-.building-card p {
-  /* padding-bottom: 0.5rem; */
+.building-card span img {
+  width: 60%;
 }
 
 .image-grid {
-  display: none;
+  /* display: none; */
+  grid-gap: 1rem 1rem;
+  padding-bottom: 3rem;
 }
 
 .image-grid .img {
@@ -101,29 +113,39 @@
 
   .image-grid .img:first-child,
   .image-grid .img:nth-child(2) {
-    height: 140px;
+    height: 200px;
   }
   .image-grid .img:last-child {
     grid-column: 1/-1;
-    height: 300px;
+    height: 370px;
   }
 }
 
 /* === ASIDES === */
+
 .map {
-  justify-content: center;
   grid-gap: 1rem 1rem;
 }
 
 .map-image {
-  max-width: 400px;
   height: 400px;
   box-shadow: 0 4px 4px 3px #e3e3e3;
+  position: relative;
 }
 
 .map-image img {
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+}
+
+.showing {
+  opacity: 1 !important;
+  transition: opacity 1.5s ease-in;
+  z-index: 2;
 }
 
 .card {
@@ -134,6 +156,7 @@
 
 .card > h3 {
   padding-bottom: 1.4rem;
+  font-weight: 600;
 }
 
 .card > div {
@@ -143,24 +166,33 @@
 .card div h4 {
   line-height: 2;
   padding-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.card div p {
+  color: #ababab;
 }
 
 .card:last-child div:first-child > .flex {
   justify-content: space-between;
 }
 
-.card:last-child div:first-child > .flex div {
-  border: 1px solid;
+.card:last-child div:first-child > .flex button {
+  border: 1.5px solid #b5b5b5;
   flex-basis: 30%;
   padding: 0.8rem 0.5rem;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
+  background: #fff;
+  font-size: 1rem;
+  outline: none;
 }
 
-.card:last-child div:first-child > .flex div:nth-child(2) {
-  background: #4732b4;
+.colored-bg {
+  background: #4732b4 !important;
   color: #fff;
+  border: none !important;
 }
 
 .card:last-child div:nth-child(2) input {
@@ -168,16 +200,21 @@
   height: 45px;
   border-radius: 5px;
   outline: none;
-  border: 1px solid;
+  border: 1.5px solid #b5b5b5;
 }
 
 @media screen and (min-width: 700px) {
   .map {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+
   .map div:nth-child(3) {
     grid-column: 2;
     grid-row: 1;
+  }
+
+  .map-image {
+    max-width: 400px;
   }
 }
 
@@ -192,6 +229,7 @@
   justify-content: space-between;
 }
 .direction-circle {
+  cursor: pointer;
   justify-content: center;
   border: 1px solid #ffffff;
   box-shadow: 0px 4px 4px 1px #c0bebecc;
