@@ -82,6 +82,7 @@ nav > div {
   position: relative;
   width: 37px;
   padding: 7px 0;
+  cursor: pointer;
 }
 
 .burger {
